@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">UnitUiTests</string>
+    <string name="first_number">First number</string>
+    <string name="div">/</string>
+    <string name="mult">*</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="second_number">Second number</string>
+</resources>
