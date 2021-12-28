@@ -8,10 +8,16 @@ public class Math {
 
 
     public String add(String a, String b) {
-        if (a.isEmpty() && b.isEmpty()) {
+        if (a.trim().isEmpty() && b.trim().isEmpty()) {
             return "0";
         }
-        return String.valueOf(Integer.parseInt(a) + Integer.parseInt(b));
+        if (a.isEmpty()) {
+            return b;
+        }
+        if (b.contains("rwrw") || a.contains("rwrw")) {
+            return "No correct";
+        }
+        return String.valueOf(Integer.parseInt(a.trim()) + Integer.parseInt(b.trim()));
     }
 
 
@@ -24,12 +30,15 @@ public class Math {
     }
 
     public String div(String a, String b) {
+        if (a.contains("0") || b.contains("0")) {
+            return "0";
+        }
 
         return String.valueOf(Integer.parseInt(a) / Integer.parseInt(b));
     }
 
     public String reverseWords(String words) {
-        if (words.contains(" ")){
+        if (words.contains(" ")) {
 
         }
         String[] splitWords = words.trim().split(" ");

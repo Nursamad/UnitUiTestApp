@@ -37,20 +37,20 @@ public class MathTest {
 
     @Test
     public void emptyTwoFieldAddCase() {
-        assertEquals("3", math.add("", ""));
+        assertEquals("0", math.add("", ""));
         System.out.println("emptyTwoFieldAddCase");
     }
 
     @Test
     public void charFieldAddCase() {
-        assertEquals("No correct", math.add("a", "rwrw"));
+        assertEquals("No correct", math.add("1", "rwrw"));
         System.out.println("charFieldAddCase");
     }
 
 
     @Test
     public void withSpaceAddCase() {
-        assertEquals("6", math.add(" 3", "     3   "));
+        assertEquals("6", math.add(" 3", "   3  "));
         System.out.println("withSpaceAddCase");
     }
 
@@ -104,7 +104,7 @@ public class MathTest {
 
     @Test
     public void minusByMinus() {
-        assertEquals("6", math.sub("-3", "-3"));
+        assertEquals("0", math.sub("-3", "-3"));
     }
 
     @Test
@@ -116,6 +116,7 @@ public class MathTest {
 //public void negativePlusPut(){
 //        assertEquals("-6", math.sub("-8" ,"2" ));
 //}
+
     @Test
     public void threeAndMoreWords() {
         assertEquals("Four Three Two One", math.reverseWords("One Two Three Four "));
