@@ -63,7 +63,7 @@
 
 
     <Button
-        android:id="@+id/mult"
+        android:id="@+id/btn_mult"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="30dp"
