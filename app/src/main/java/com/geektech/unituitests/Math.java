@@ -1,21 +1,37 @@
 package com.geektech.unituitests;
 
 public class Math {
-//
-//    public int add(String a, String b) {
-//        return Integer.parseInt(a) + Integer.parseInt(b);
-//    }
-
 
     public String add(String a, String b) {
+        char[] charsA = a.toCharArray();
+        char[] charsB = b.toCharArray();
+        boolean isCorrect = false;
+
+        for (char charA : charsA) {
+            if (Character.isDigit(charA)){
+                isCorrect = true;
+            }else {
+                isCorrect = false;
+                break;
+            }
+        }
+        for (char charB : charsB) {
+            if (Character.isDigit(charB)){
+                isCorrect = true;
+            }else {
+                isCorrect = false;
+                break;
+            }
+        }
+
+        if (!isCorrect) {
+            return "No correct";
+        }
         if (a.trim().isEmpty() && b.trim().isEmpty()) {
             return "0";
         }
         if (a.isEmpty()) {
             return b;
-        }
-        if (b.contains("rwrw") || a.contains("rwrw")) {
-            return "No correct";
         }
         return String.valueOf(Integer.parseInt(a.trim()) + Integer.parseInt(b.trim()));
     }

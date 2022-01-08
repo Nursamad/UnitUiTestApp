@@ -43,7 +43,7 @@ public class MathTest {
 
     @Test
     public void charFieldAddCase() {
-        assertEquals("No correct", math.add("1", "rwrw"));
+        assertEquals("No correct", math.add("1", "rwr7"));
         System.out.println("charFieldAddCase");
     }
 
@@ -103,7 +103,7 @@ public class MathTest {
     }
 
     @Test
-    public void minusByMinus() {
+    public void minusMultyMinus() {
         assertEquals("0", math.sub("-3", "-3"));
     }
 

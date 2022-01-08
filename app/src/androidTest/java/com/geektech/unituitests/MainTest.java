@@ -20,12 +20,6 @@ public class MainTest {
 
     @Rule
     public ActivityScenarioRule rule = new ActivityScenarioRule<>(MainActivity.class);
-//
-//    @Test
-////    public void tvVisibilityCheck() {
-////        onView(withId(R.id.btn_add)).perform(click());
-////        onView(withId(R.id.tv_result)).check(matches(isDisplayed()));
-////    }
 
     @Test
     public void checkAddOperations() {
@@ -43,4 +37,93 @@ public class MainTest {
         onView(withId(R.id.btn_add)).perform(click());
         onView(withId(R.id.tv_result)).check(matches(withText("6")));
     }
+
+    @Test
+    public void checkAddNegativeOperation(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("-3"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("-3"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("-6")));
+    }
+
+    @Test
+    public void checkAddWithOneEmptyOperation(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText(""));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("3"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("3")));
+    }
+    @Test
+    public void checkAddWithAllEmptyOperation(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText(""));
+        onView(withId(R.id.secondNum_edt)).perform(typeText(""));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("")));
+    }
+    @Test
+    public void checkDivByZero(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("4"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("0"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("0")));
+    }
+    @Test
+    public void checkMultyByZero(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("6"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("0"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("0")));
+    }
+    @Test
+    public void checkNegativeMultyNeg(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("-2"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("-2"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("4")));
+    }
+
+    @Test
+    public void checkPositiveMultyNegative(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("3"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("-2"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("-6")));
+    }
+    @Test
+    public void checkSimpleMultyCase(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("3"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("2"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("6")));
+    }
+    @Test
+    public void checkDivSameDigit(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("3"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("3"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("1")));
+    }
+    @Test
+    public void checkNumMultyByOne(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("3"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("1"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("3")));
+    }
+    @Test
+    public void checkZeroByZero(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("0"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("0"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("0")));
+    }
+    @Test
+    public void checkMinusMultyMinus(){
+        onView(withId(R.id.firstNum_edt)).perform(typeText("-2"));
+        onView(withId(R.id.secondNum_edt)).perform(typeText("-2"));
+        onView(withId(R.id.btn_add)).perform(click());
+        onView(withId(R.id.tv_result)).check(matches(withText("0")));
+    }
+
+
 }
