@@ -7,6 +7,12 @@ public class Math {
         char[] charsB = b.toCharArray();
         boolean isCorrect = false;
 
+        if (a.trim().isEmpty() && b.trim().isEmpty()) {
+            return "0";
+        }
+        if (a.isEmpty()) {
+            return b;
+        }
         for (char charA : charsA) {
             if (Character.isDigit(charA)){
                 isCorrect = true;
@@ -14,6 +20,7 @@ public class Math {
                 isCorrect = false;
                 break;
             }
+
         }
         for (char charB : charsB) {
             if (Character.isDigit(charB)){
@@ -23,16 +30,11 @@ public class Math {
                 break;
             }
         }
-
-        if (!isCorrect) {
+        if (!isCorrect){
             return "No correct";
         }
-        if (a.trim().isEmpty() && b.trim().isEmpty()) {
-            return "0";
-        }
-        if (a.isEmpty()) {
-            return b;
-        }
+
+
         return String.valueOf(Integer.parseInt(a.trim()) + Integer.parseInt(b.trim()));
     }
 

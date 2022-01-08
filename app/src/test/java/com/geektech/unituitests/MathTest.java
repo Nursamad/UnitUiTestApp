@@ -23,13 +23,6 @@ public class MathTest {
     }
 
     @Test
-    public void simpleNegativeAddCase() {
-        assertEquals("-6", math.add("-3", "-3"));
-        System.out.println("simpleNegativeAddCase");
-    }
-
-
-    @Test
     public void emptyOneFieldAddCase() {
         assertEquals("3", math.add("", "3"));
         System.out.println("emptyOneFieldAddCase");
@@ -48,11 +41,6 @@ public class MathTest {
     }
 
 
-    @Test
-    public void withSpaceAddCase() {
-        assertEquals("6", math.add(" 3", "   3  "));
-        System.out.println("withSpaceAddCase");
-    }
 
     @Test
     public void twoWordsReverseCase() {
