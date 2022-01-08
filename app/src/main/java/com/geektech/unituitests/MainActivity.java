@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             String num2 = binding.secondNumEdt.getText().toString();
             binding.tvResult.setText(math.div(num1, num2));
         });
-        binding.mult.setOnClickListener(v->{
+        binding.btnMult.setOnClickListener(v->{
             binding.tvResult.setVisibility(View.VISIBLE);
             String num1 = binding.firstNumEdt.getText().toString();
             String num2 = binding.secondNumEdt.getText().toString();
